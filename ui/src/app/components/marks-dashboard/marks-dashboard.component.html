@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<div *ngIf="!student">
+  <h3>All Students are listed below :-</h3>
+  <div class="user-cards-container">
+    <div class="user-card" *ngFor="let user of allStudents">
+      <img
+        [src]="'http://localhost:2020/' + user.profilePicture"
+        alt="{{ user.name }}'s profile picture"
+        class="profile-picture"
+      />
+      <h4>{{ user.name }}</h4>
+      <p>{{ user.email }}</p>
+
+      <div *ngFor="let item of user.marks">
+        <!-- {{ item | json }} -->
+        <span>{{ item.subject }} </span>
+        <span>{{ item.marks }} </span>
+      </div>
+      <button class="btn btn-dark mt-3" (click)="updateBtn(user.marks)">
+        Update Marks
+      </button>
+    </div>
+  </div>
+</div>
+
+<h1 *ngIf="student">Student Marks</h1>
+<div class="user-cards-container" *ngIf="student">
+  <div class="user-card" *ngFor="let item of studentMarks">
+    <h2>{{ item.subject }}</h2>
+    <h4>{{ item.marks }}</h4>
+  </div>
+</div>
+
+<div *ngIf="updateBtnClicked" class="marks-dashboard">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="marks-dashboard-form">
+    <div formArrayName="marks" class="marks-dashboard-form-array">
+      <div
+        *ngFor="let mark of marksArray.controls; let i = index"
+        [formGroupName]="i"
+        class="marks-dashboard-mark-card"
+      >
+        <label for="subject-{{ i }}" class="marks-dashboard-label"
+          >Subject</label
+        >
+        <input
+          id="subject-{{ i }}"
+          formControlName="subject"
+          class="marks-dashboard-input"
+
+        />
+
+        <label for="marks-{{ i }}" class="marks-dashboard-label">Marks</label>
+        <input
+          id="marks-{{ i }}"
+          formControlName="marks"
+          type="number"
+          class="marks-dashboard-input"
+        />
+      </div>
+    </div>
+    <button type="submit" class="marks-dashboard-submit-button">Submit</button>
+  </form>
+</div>

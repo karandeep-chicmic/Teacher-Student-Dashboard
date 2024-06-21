@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="user-cards-container">
+  <div *ngFor="let user of allUsers">
+    <div class="user-card">
+      <img
+        [src]="'http://localhost:2020/' + user.profilePicture"
+        alt="{{ user.name }}'s profile picture"
+        class="profile-picture"
+      />
+      <h3>{{ user.name }}</h3>
+      <p>{{ user.email }}</p>
+      <select (change)="onRoleChange($event , user._id)" [value]="user.role">
+        <option value="admin">Admin</option>
+        <option value="teacher">Teacher</option>
+        <option value="student">Student</option>
+      </select>
+    </div>
+  </div>
+</div>

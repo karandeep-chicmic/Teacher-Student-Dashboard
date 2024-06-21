@@ -1,0 +1,79 @@
+.user-card {
+  background-color: #444446;
+  color: rgb(179, 193, 200);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 100%;
+}
+h3{
+  color: #4c5b6e;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+h4{
+  margin-top: 20px;
+  color: #e3e1e1;
+}
+.profile-picture {
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+}
+
+.user-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.marks-dashboard {
+  padding: 20px;
+}
+
+.marks-dashboard-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.marks-dashboard-form-array {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.marks-dashboard-mark-card {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.marks-dashboard-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.marks-dashboard-input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.marks-dashboard-submit-button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
